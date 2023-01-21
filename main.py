@@ -8,12 +8,11 @@ channels = []
 someMath = 0 
 
 while True:
-    offset += add;
-    limit += add;
     res = requests.get(
         "https://combot.org/api/chart/all?limit=" +
         str(limit) + "&offset=" + str(offset))
-        
+    offset += add;
+    limit += add;
     json = res.json()
     if not json:
         print('Done')
